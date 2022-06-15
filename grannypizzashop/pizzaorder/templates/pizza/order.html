@@ -1,10 +1,13 @@
 <h1>
     order pizza
 </h1>
-
+<h2><pre>{{notes}}</pre>
+</h2>
 <form method="post">
     {% csrf_token %}
+    {{ Pizzaform.as_p }}
     <input type="submit">
+    <input type="reset">
 </form>
 
 <a href=" {% url 'Home' %} "> Back to home page</a>
