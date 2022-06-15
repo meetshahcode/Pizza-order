@@ -1,5 +1,3 @@
-from cProfile import label
-from dataclasses import fields
 from django import forms
 from .models import Pizza
 # class PizzaForm(forms.Form):
@@ -22,5 +20,11 @@ class PizzaForm(forms.ModelForm):
             'topping2':'Topping 2',
             'size' : 'Size'
         }
-        
+        widgets = {
+            # 'topping1': forms.Textarea,
+            # 'topping2':forms.PasswordInput
+            #'size':forms.CheckboxSelectMultiple
+            #'size':forms.CheckboxInput
+            'size':forms.RadioSelect
+        }
 
