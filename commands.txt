@@ -6,3 +6,5 @@ pip install django
 django-admin startproject grannypizzashop
 cd grannypizzashop
 py manage.py runserver
+
+django-admin startapp pizzaorder
