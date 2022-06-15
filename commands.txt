@@ -3,6 +3,7 @@ vnev/Scripts/activate
 (in vnev enviroment)
 
 pip install django
+pip install pilloe
 django-admin startproject grannypizzashop
 cd grannypizzashop
 py manage.py runserver

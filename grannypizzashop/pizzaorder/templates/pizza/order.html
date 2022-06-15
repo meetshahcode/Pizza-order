@@ -3,10 +3,10 @@
 </h1>
 <h2><pre>{{notes}}</pre>
 </h2>
-<form method="post">
+<form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
     {% csrf_token %}
     {{ Pizzaform.as_p }}
-    <input type="submit">
+    <input type="submit" value="Order Pizza">
     <input type="reset">
 </form>
 

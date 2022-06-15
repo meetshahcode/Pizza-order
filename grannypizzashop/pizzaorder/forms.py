@@ -12,19 +12,19 @@ from .models import Pizza
 
 class PizzaForm(forms.ModelForm):
     """PizzaForm definition."""
+    image = forms.ImageField()
     class Meta:
         model = Pizza
         fields = ['topping1','topping2','size']
         labels = {
             'topping1':'Topping 1',
-            'topping2':'Topping 2',
-            'size' : 'Size'
+            'topping2':'Topping 2'
         }
         widgets = {
             # 'topping1': forms.Textarea,
             # 'topping2':forms.PasswordInput
             #'size':forms.CheckboxSelectMultiple
             #'size':forms.CheckboxInput
-            'size':forms.RadioSelect
+            #'size':forms.RadioSelect
         }
 
