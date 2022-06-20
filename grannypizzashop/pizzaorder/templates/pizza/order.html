@@ -1,38 +1,57 @@
-<h1>
-    order pizza
-</h1>
-<h2><pre>{{notes}}</pre>
-</h2>
 
 
-{% if  created_form_id%}
-    <a href="{% url 'edit_order' pk=created_form_id %} ">Edit your Pizza order</a>
-{% endif %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</head>
+  <body>
+
+    <h1>
+        Granny Pizza Shope
+    </h1>
+    <h2>
+        <pre>{{notes}}</pre>
+    </h2>
     
+    
+    {% if  created_form_id%}
+        <a href="{% url 'edit_order' pk=created_form_id %} ">Edit your Pizza order</a>
+    {% endif %}
+        
+    
+    <form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
+        {% csrf_token %}
+        <!-- <ol>
+            {{ Pizzaform.as_ul }}
+        </ol> -->
+        <!-- <ul>
+            {{ Pizzaform.as_ul }}
+        </ul> -->
+        <!-- <table>
+        {{ Pizzaform.as_table }}
+        </table> -->
+        {{ Pizzaform.as_p }}
+        <input type="submit" value="Order Pizza">
+        <input type="reset">
+    </form>
+    
+    <a href=" {% url 'Home' %} "> Back to home page</a>
+    
+    <br><br>
+    whant more than one pizza?
+     
+    <form action=" {% url 'pizzas' %} " method="post">
+        {% csrf_token %}
+        {{multiple_form.as_p}}
+        <input type="submit" value="Get pizzas">
+    </form>
 
-<form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
-    {% csrf_token %}
-    <!-- <ol>
-        {{ Pizzaform.as_ul }}
-    </ol> -->
-    <!-- <ul>
-        {{ Pizzaform.as_ul }}
-    </ul> -->
-    <!-- <table>
-    {{ Pizzaform.as_table }}
-    </table> -->
-    {{ Pizzaform.as_p }}
-    <input type="submit" value="Order Pizza">
-    <input type="reset">
-</form>
-
-<a href=" {% url 'Home' %} "> Back to home page</a>
-
-<br><br>
-whant more than one pizza?
- 
-<form action=" {% url 'pizzas' %} " method="post">
-    {% csrf_token %}
-    {{multiple_form.as_p}}
-    <input type="submit" value="Get pizzas">
-</form>
+</body>
+</html>
