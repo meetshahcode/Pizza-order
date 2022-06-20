@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pizzaorder',
-    'widget_tweks',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
