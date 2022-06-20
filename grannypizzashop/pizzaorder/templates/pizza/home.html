@@ -1,7 +1,12 @@
-<h1>
-Welcome to Granny pizza shop
-</h1>
+{% extends 'pizza/base.html' %}
 
-<a href="{% url 'order' %}">
-makes orders
-</a>
+
+{% block content %}
+
+<div class="container text-center"></div>
+<h1>
+    Welcome to Granny pizza shop
+</h1>
+    
+{% endblock content %}
+    

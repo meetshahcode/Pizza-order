@@ -1,3 +1,6 @@
+
+{% extends 'pizza/base.html' %}
+{% block content %}
 <h1>
     Edit order
 </h1>
@@ -10,3 +13,6 @@
     <input type="submit" value="Update Pizza">
     <a href=" {% url 'order' %}">back to order</a>
 </form>
+
+{% endblock content %}
+    
