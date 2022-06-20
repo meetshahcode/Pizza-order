@@ -12,9 +12,12 @@
 
 <form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
     {% csrf_token %}
-    <ul>
+    <ol>
         {{ Pizzaform.as_ul }}
-    </ul>
+    </ol>
+    <!-- <ul>
+        {{ Pizzaform.as_ul }}
+    </ul> -->
     <!-- <table>
     {{ Pizzaform.as_table }}
     </table> -->
