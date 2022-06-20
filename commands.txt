@@ -9,3 +9,7 @@ cd grannypizzashop
 py manage.py runserver
 
 django-admin startapp pizzaorder
+
+
+pip install django-widget-tweaks
+python -m ensurepip
