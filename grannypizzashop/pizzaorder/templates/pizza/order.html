@@ -12,7 +12,11 @@
 
 <form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
     {% csrf_token %}
-    {{ Pizzaform.as_p }}
+    <table>
+    {{ Pizzaform.as_table }}
+
+    </table>
+    <!-- {{ Pizzaform.as_p }} -->
     <input type="submit" value="Order Pizza">
     <input type="reset">
 </form>
