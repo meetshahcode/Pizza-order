@@ -12,7 +12,7 @@ from .models import Pizza
 
 class PizzaForm(forms.ModelForm):
     """PizzaForm definition."""
-    image = forms.ImageField()
+    # image = forms.ImageField()
     class Meta:
         model = Pizza
         fields = ['topping1','topping2','size']
@@ -27,4 +27,9 @@ class PizzaForm(forms.ModelForm):
             #'size':forms.CheckboxInput
             #'size':forms.RadioSelect
         }
+
+class MultiplePizzas(forms.Form):
+    """MultiplePizzas definition."""
+    numbers = forms.IntegerField(min_value=2,max_value=5)
+    # TODO: Define form fields here
 

@@ -3,6 +3,13 @@
 </h1>
 <h2><pre>{{notes}}</pre>
 </h2>
+
+
+{% if  created_form_id%}
+    <a href="{% url 'edit_order' pk=created_form_id %} ">Edit your Pizza order</a>
+{% endif %}
+    
+
 <form enctype="multipart/form-data" action=" {% url 'order' %} " method="post">
     {% csrf_token %}
     {{ Pizzaform.as_p }}
@@ -11,3 +18,12 @@
 </form>
 
 <a href=" {% url 'Home' %} "> Back to home page</a>
+
+<br><br>
+whant more than one pizza?
+ 
+<form action=" {% url 'pizzas' %} " method="post">
+    {% csrf_token %}
+    {{multiple_form.as_p}}
+    <input type="submit" value="Get pizzas">
+</form>
